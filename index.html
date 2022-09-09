@@ -10,7 +10,6 @@
 
 	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
 	<link rel="stylesheet" type="text/css" href="resume.css" media="all" />
-
 </head>
 <body>
 
@@ -188,7 +187,7 @@
 						</div>
 					</div>
 
-					<div class="yui-gf last">
+					<div class="yui-gf">
 						<div class="yui-u first">
 							<h2>Certifcations</h2>
 						</div>
@@ -216,12 +215,39 @@
 						</div>
 					</div>
 
+					<div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Projects</h2>
+						</div>
+						<div class="yui-u">
+							<h3>Unraid Server running Docker containers and VMs. Docker with Plex media server and transcoder.</h3>
+							<h3>Cloud Resume Challenge - cloudresumechallenge.dev<br>
+								The Cloud Resume Challenge is a multiple-step resume project which helps build and demonstrate skills fundamental to pursuing a career as an AWS Cloud Engineer. Joey-Tran utilizes AWS S3 for storage, AWS CloudFront for security and availability, and an API plus AWS Lambda function. Github Action was used for CI/CD Front end and Back end.</h3>
+						</div>
+					</div>
+
 				</div><!--// .yui-b -->
 			</div><!--// yui-main -->
 		</div><!--// bd -->
 
 		<div id="ft">
 			<p>Joey Tran &mdash; <a href="mailto:joeyytran@gmail.com">joeyytran@gmail.com</a> &mdash; (626) 260-3733</p>
+			<p>&nbsp;</p>
+			<h2> Visitor Counter:</h2>
+			<h2 id="counter">"Visitor Counter"</h2>	
+			<script>
+				fetch("https://bdpc7vep52.execute-api.us-east-1.amazonaws.com/prod")
+					.then((response) => {
+						return response.json();
+					})
+					.then((data) => {
+						document.getElementById("counter").innerHTML = data
+						//console.log(data)
+					})
+					.catch(function (error) {
+						return console.log(error);
+					});
+			</script>
 		</div><!--// footer -->
 
 	</div><!-- // inner -->
